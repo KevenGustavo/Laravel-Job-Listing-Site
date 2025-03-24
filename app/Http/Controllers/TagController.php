@@ -9,6 +9,6 @@ class TagController extends Controller
 {
     public function __invoke(Tag $tag)
     {
-        return view("results", ["searchWord" => $tag->name,"jobs"=>$tag->jobs]);
+        return view("results", ["searchWord" => $tag->name,"jobs"=>$tag->jobs->load(["employer","tags"])]);
     }
 }

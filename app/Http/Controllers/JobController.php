@@ -54,7 +54,7 @@ class JobController extends Controller
 
         if($attributes["tags"] ?? false){
             foreach (explode(",",$attributes["tags"]) as $tag){
-                $job->tag($tag);
+                $job->tag(strtolower($tag));
             }
         }
 
@@ -66,7 +66,7 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        //
+        return view("jobs.show",["searchWord"=>$job->title,"job"=>$job->load(["employer","tags"])]);
     }
 
     /**

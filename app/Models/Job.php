@@ -18,7 +18,7 @@ class Job extends Model
     }
 
     function tag(string $name){
-        $tag = Tag::firstOrCreate(["name"=>$name]);
+        $tag = Tag::firstOrCreate(["name"=>strtolower($name)]);
 
         $this->tags()->attach($tag);
     }

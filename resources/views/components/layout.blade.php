@@ -22,7 +22,7 @@
             <div class="space-x-6 font-bold max-w-[986px]">
                 <a href="/">Jobs</a>
                 <a href="#">Salaries</a>
-                <a href="#">Companies</a>
+                <a href="/employers">Companies</a>
             </div>
 
             @auth
